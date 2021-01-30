@@ -14,3 +14,5 @@ Grade:
 - 5/5
 
 If you want to see the final assignment, [click here](https://github.com/antipoppi/laravel-react)
+
+Course completed 17.8.2020. 
