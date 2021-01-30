@@ -1,0 +1,25 @@
+body {
+    text-align: center;
+}
+
+/*  Nämä muotoiluvinkit löytyi w3-schoolsista 
+    Tuskin näitä ois tarvinnu, mutta halusin kokeilla
+*/
+
+.slider {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 200px;
+  height: 5px;
+  background: lightgray;
+  outline: none;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 30px;
+  background: gray;
+  cursor: pointer; /* Cursor on hover */
+}

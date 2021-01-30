@@ -1,0 +1,7 @@
+Kehitysympäristö:
+käytössä 33 540 tiedostoa, 4866 kansiota. Koko levyllä 189Mt
+
+Tuotantoversio (build):
+Käytössä 15 tiedostoa, 3 kansiota. Koko levyllä 500kt
+
+// kehitysympäristö luotu komennolla npx create-react-app t5

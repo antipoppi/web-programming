@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Harjoitus 3 Tehtävä 1</title>
+</head>
+<style>
+    #c {
+        text-align: left;
+        border: 1px solid black;
+        margin: 4px auto;
+        width: 15em;
+        height: auto;
+        padding: 10px;
+    }
+
+    p,
+    input,
+    button {
+        margin: 4px;
+    }
+
+</style>
+
+<body>
+    <div id="c">
+        <h1>SimpleToDo</h1>
+        <p>ToDo:</p>
+        <input type="text" id="inp1"><br>
+        <button id="btnAdd">Lisää</button>
+        <button id="btnEmpty">Tyhjää lista</button>
+        <ul id="list">
+        </ul>
+    </div>
+    <script type="text/javascript">
+        // sivun latautuessa input on valmiiksi valittuna
+        document.getElementById("inp1").focus();
+        document.getElementById("inp1").select();
+        // tällä funktiolla lisätään input-kentän sisältö aina kun nappia painetaan
+        btnAdd.onclick = () => {
+            let ulnode = document.getElementById("list");
+            let linode = document.createElement("li");
+            let inputValue = document.getElementById("inp1").value;
+            // jos inputvaluessa ei ole merrkejä, niin sitä ei lisätä listaan
+            if (inputValue == "" || inputValue == null) {
+                return;
+            } else {
+                let litext = document.createTextNode(inputValue);
+                linode.appendChild(litext);
+                ulnode.appendChild(linode);
+                // lisäämisen jälkeen tyhjennetään input-kenttä
+                document.getElementById("inp1").value = "";
+                // ja valitaan input-kenttä aktiiviseksi
+                document.getElementById("inp1").focus();
+                document.getElementById("inp1").select();
+            }
+        };
+
+        // tällä funktiolla poistetaan listan kaikki sisältö
+        btnEmpty.onclick = () => {
+            let toDoList = document.getElementById("list");
+            while (list.hasChildNodes()) {
+                toDoList.removeChild(toDoList.firstChild);
+            }
+            document.getElementById("inp1").focus();
+            document.getElementById("inp1").select();
+        };
+
+        // tällä tapahtumakuuntelijalla voidaan poistaa klikkaamalla li-elementtiä
+        document.addEventListener("click", function() {
+            if (event.target.tagName == "LI") {
+                document.getElementById("list").removeChild(event.target);
+            }
+        });
+
+        // tällä tapahtumakuuntelijalla voidaan lisätä listaan painamalla enteriä
+        document.getElementById("inp1").addEventListener("keyup", function() {
+            if (event.keyCode == 13) {
+                document.getElementById("btnAdd").onclick();
+            }
+        });
+
+    </script>
+</body>
+
+</html>

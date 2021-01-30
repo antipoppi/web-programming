@@ -1,0 +1,27 @@
+#mapid {
+    height: 1024px;
+    width: 1024px;
+}
+
+.custom-popup .leaflet-popup-content-wrapper {
+    background: #ffc;
+    font-size: 12px;
+    line-height: 18px;
+    position: relative;
+    top: -30px
+}
+
+.custom-popup .leaflet-popup-content-wrapper a {
+    color: rgba(0, 0, 255, 0.5);
+}
+
+.custom-popup .leaflet-popup-tip-container {
+    width: 30px;
+    height: 15px;
+}
+
+.custom-popup .leaflet-popup-tip {
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid #2c3e50;
+}

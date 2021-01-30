@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Harjoitus 3 Tehtävä 1</title>
+    <link rel="stylesheet" href="styles/h03t06.css" type="text/css">
+</head>
+
+
+<body>
+    <div id="c">
+        <p>Valitse juhlaväri:<br>
+            <select name="festivalcolor" id="pc">
+                <option value="#ffff66">Keltainen</option>
+                <option value="#fa8072">Punainen</option>
+                <option value="#009933">Vihreä</option>
+                <option value="#00bfff">Sininen</option>
+            </select><br>
+            Mikä juhla?<br>
+            <input type="text" id="pt"><br>
+            <button type="button" id="cc">Vaihda valittu taustaväri</button>
+        </p>
+        <div id="printDiv">
+            <p>Tulostusalue:<br>
+                <span>Valittu: </span><span id="colorprint"></span>
+            </p>
+            <p id="festivalprint"></p>
+        </div>
+    </div>
+    <script>
+        // alustetaan värikoodin oletusvalinta näkymään sivun ladattua
+        document.getElementById("colorprint").innerHTML = pc.options[pc.selectedIndex].value;
+        
+        // tämä funktio päivittää värikoodin näkymään valinnan mukaan
+        pc.onclick = function() {
+            document.getElementById("colorprint").innerHTML = pc.options[pc.selectedIndex].value;
+        };
+        
+        // tämä funktio päivittää tulostusalueen taustavärin kun nappia painetaan
+        cc.onclick = function() {
+            document.getElementById("printDiv").style.backgroundColor = pc.options[pc.selectedIndex].value;
+        }
+        
+        /*  
+            Nämä kaksi tapahtumakuuntelijaa estää kirjoittamasta numeroita input-elementtiin.
+            48-57 keycodet ovat 0-9 näppäimistöllä ja 96-105 taas numpadin 0-9
+            Jos painettu näppäin on jokin muu kuin numero, se näytetään tulostusalueella.
+        */
+        document.getElementById("pt").addEventListener("keydown", function() {
+            if (event.keyCode >= 48 && event.keyCode <= 57 || event.keyCode >= 96 && event.keyCode <= 105) {
+                event.preventDefault();
+            } else {
+                inputValue = document.getElementById("pt").value;
+                document.getElementById("festivalprint").innerHTML = inputValue;
+            }
+        });
+        document.getElementById("pt").addEventListener("keyup", function() {
+            if (event.keyCode >= 48 && event.keyCode <= 57 || event.keyCode >= 96 && event.keyCode <= 105) {
+                event.preventDefault();
+            } else {
+                inputValue = document.getElementById("pt").value;
+                document.getElementById("festivalprint").innerHTML = inputValue;
+            }
+        });
+        
+        
+        
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Harjoitus 3 Tehtävä 2</title>
+</head>
+<style>
+    #a {
+        border: 1px solid black;
+        margin: 4px auto;
+        width: 20em;
+        height: 10em;
+        padding: 10px;
+    }
+
+    #b {
+        border: 1px solid black;
+        margin: 4px auto;
+    }
+
+    p.b {
+        text-align: center;
+    }
+
+    span {
+        margin-left: 15px;
+        margin-right: 15px;
+        background-color: aquamarine;
+        padding: 0px 10px 0px 10px;
+        border: 1px solid black;
+    }
+
+    input {
+        text-align: center;
+        display: inline-block;
+        margin: 0px 14px 0 14px;
+        width: 35px;
+        border-style: inset;
+        border-width: medium
+    }
+
+    p.c {
+        display: inline;
+        text-align: left;
+    }
+
+</style>
+
+<body>
+    <div id="a">
+        <div id="b">
+            <p class="b">
+                <span>T1</span>
+                <span>T2</span>
+                <span>T3</span>
+                <span>T4</span>
+            </p>
+            <p class="b">
+                <input type="text" class="num" id="t1" value=0>
+                <input type="text" class="num" id="t2" value=0>
+                <input type="text" class="num" id="t3" value=0>
+                <input type="text" class="num" id="t4" value=0>
+            </p>
+        </div>
+        <p class="c">Pistemäärä (summa): </p>
+        <p class="c" id="pisteet"></p><br>
+        <p class="c">Arvosana: </p>
+        <p class="c" id="arvosana"></p>
+    </div>
+    <script>
+        // sivun latautuessa pisteet ja arvosana on 0
+        document.getElementById("pisteet").innerHTML = 0;
+        document.getElementById("arvosana").innerHTML = 0;
+        // klikattaessa input-elementtejä valitaan sisältö automaattisesti
+        t1.onclick = t1.select;
+        t2.onclick = t2.select;
+        t3.onclick = t3.select;
+        t4.onclick = t4.select;
+        // kun inputista poistutaan, ajetaan LaskePisteet metodi
+        t1.onblur = LaskePisteet;
+        t2.onblur = LaskePisteet;
+        t3.onblur = LaskePisteet;
+        t4.onblur = LaskePisteet;
+
+        function LaskePisteet() {
+            let err = 0;
+            let t1 = parseInt(document.getElementById("t1").value, 10);
+            let t2 = parseInt(document.getElementById("t2").value, 10);
+            let t3 = parseInt(document.getElementById("t3").value, 10);
+            let t4 = parseInt(document.getElementById("t4").value, 10);
+            // jos syötetty tieto ei ole luku tai se ei ole 0-6 välillä, err saa arvon 1
+            if (isNaN(t1) || t1 < 0 || t1 > 6) {
+                err = 1;
+            }
+            if (isNaN(t2) || t2 < 0 || t2 > 6) {
+                err = 1;
+            }
+            if (isNaN(t3) || t3 < 0 || t3 > 6) {
+                err = 1;
+            }
+
+            if (isNaN(t4) || t4 < 0 || t4 > 6) {
+                err = 1;
+            }
+            // jos err on 1 herjataan virheestä
+            if (err == 1) {
+                document.getElementById("pisteet").innerHTML = "VIRHE!";
+                document.getElementById("arvosana").innerHTML = "VIRHE!";
+            }
+            // jos ei ole virheitä, lasketaan/näytetään pistemäärä
+            if (err == 0) {
+                let summa = t1 + t2 + t3 + t4;
+                document.getElementById("pisteet").innerHTML = summa;
+                // lopuksi lasketaan/näytetään arvosana 
+                LaskeArvosana(summa);
+            }
+        };
+
+        function LaskeArvosana(pistemäärä) {
+            if (pistemäärä >= 0 && pistemäärä <= 12) {
+                document.getElementById("arvosana").innerHTML = 0;
+            }
+            if (pistemäärä >= 13 && pistemäärä <= 15) {
+                document.getElementById("arvosana").innerHTML = 1;
+            }
+            if (pistemäärä >= 16 && pistemäärä <= 17) {
+                document.getElementById("arvosana").innerHTML = 2;
+            }
+            if (pistemäärä >= 18 && pistemäärä <= 19) {
+                document.getElementById("arvosana").innerHTML = 3;
+            }
+            if (pistemäärä >= 20 && pistemäärä <= 21) {
+                document.getElementById("arvosana").innerHTML = 4;
+            }
+            if (pistemäärä >= 22 && pistemäärä <= 24) {
+                document.getElementById("arvosana").innerHTML = 5;
+            }
+        };
+
+    </script>
+</body>
+
+</html>

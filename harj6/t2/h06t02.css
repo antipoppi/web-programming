@@ -1,0 +1,30 @@
+body {
+    background-color: floralwhite;
+    margin: 1px;
+}
+
+#container {
+    width: 410px;
+    background-color: aliceblue;
+    border-radius: 3px;
+    padding: 0px 10px 10px 15px;
+    margin: 0px auto;
+    border: 1px solid #ddd;
+}
+
+input[type=checkbox] {
+    transform: scale(2);
+    margin: 10px;
+    background-color: floralwhite
+}
+
+label {
+    font-weight: bold;
+}
+
+button {
+    background-color: floralwhite;
+    font-family: cursive;
+    font-weight: bold;
+    border-radius: 6px;
+}

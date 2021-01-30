@@ -1,0 +1,14 @@
+body {
+    font-family: Georgia;
+}
+
+#imgContainer {
+    width: 330px;
+    height: 480px;
+    background-color: #ADBED8;
+    padding-top: 20px;
+    padding-left: 20px
+}
+p {
+    margin: 0px;
+}

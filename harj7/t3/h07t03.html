@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>h07t03-Autolaskuri</title>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="h07t03.css">
+    <!-- Chart.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
+    <!-- own scripts -->
+    <script src="h07t03.js"></script>
+
+</head>
+
+<body onload="drawchart()">
+    <div id="container">
+        <form>
+            <button type="button" id="btnFord" onclick="addcar(this.value)" value="1">Ford</button>
+            <button type="button" id="btnOpel" onclick="addcar(this.value)" value="2">Opel</button>
+            <button type="button" id="btnToyota" onclick="addcar(this.value)" value="3">Toyota</button>
+            <button type="button" id="btnNollaa" onclick="nollaa()">Nollaa</button>
+        </form>
+        <h3>Autolaskuri</h3>
+
+        <div id="canvasContainer">
+            <canvas id="myCanvas" width="400" height="400"></canvas>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

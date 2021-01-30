@@ -1,0 +1,42 @@
+body {
+    background-color: beige;
+    font-family: Arial;
+}
+
+.container {
+    width: 300px;
+    height: 300px;
+    margin: 0px auto;
+    background-color: aliceblue;
+    border: 1px solid black;
+}
+
+h1 {
+    padding-top: 50px;
+    text-align: center;
+    color: cadetblue;
+}
+
+#resultsDiv {
+    width: 200px;
+    text-align: left;
+    margin: 2px 35px;
+    background-color: inherit;
+}
+
+#inputDiv {
+    text-align: center;
+}
+
+input {
+    height: 25px;
+    width: 200px;
+    font-size: 1em;
+    padding-left: 2px;
+}
+
+a {
+    text-decoration: none;
+    color: cadetblue;
+    margin-left: 4px;
+}

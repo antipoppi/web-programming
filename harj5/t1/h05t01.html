@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html lang="fi">
+
+<head>
+    <title>Harjoitus 5 tehtävä 1</title>
+    <link rel="stylesheet" href="h05t01.css" type="text/css">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+
+<body>
+    <div id="c">
+        <form id="myForm">
+            <h1>Lukujen summa</h1>
+            <label>Luku 1: </label><input id="inp1" /><br>
+            <label>Luku 2: </label><input id="inp2" /><br><br>
+            <button type="submit">Summa</button>
+        </form>
+        <p id="tulos"></p>
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $("#myForm").submit(function(e) {
+                    // remove default submit behavior
+                    e.preventDefault();
+                    var int1 = parseInt($("#inp1").val());
+                    var int2 = parseInt($("#inp2").val());
+                    var tulos = int1 + int2;
+                    $("#tulos").text("Lukujen summa on " + tulos);
+                });
+            });
+
+        </script>
+    </div>
+</body>
+
+</html>

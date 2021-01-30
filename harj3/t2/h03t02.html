@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Harjoitus 3 Tehtävä 2</title>
+</head>
+<style>
+    #c {
+        text-align: left;
+        border: 1px solid black;
+        margin: 4px auto;
+        width: 15em;
+        height: auto;
+        padding: 10px;
+    }
+
+    p,
+    input,
+    button {
+        text-align: center;
+        margin: 4px;
+    }
+
+</style>
+
+<body>
+    <div id="c">
+        <!-- linkkien href osoittaa tämän sivun <div> elementtiin -->
+        <p><a href="#c" id="link1">KUVA1</a> | <a href="#c" id="link2">KUVA2</a> | <a href="#c" id="link3">KUVA3</a></p>
+        <img id="kuva" src="images/1.jpg">
+    </div>
+    <script>
+        // linkkiä yksi klikatessa kuvan lähde-attribuutti saa arvon images/1.jpg
+        link1.onclick = () => {
+            let image = document.getElementById("kuva");
+            image.setAttribute('src', "images/1.jpg");
+        };
+
+        // linkkiä kaksi klikatessa kuvan lähde-attribuutti saa arvon images/2.jpg
+        link2.onclick = () => {
+            let image = document.getElementById("kuva");
+            image.setAttribute('src', "images/2.jpg");
+        };
+
+        // linkkiä kolme klikatessa kuvan lähde-attribuutti saa arvon images/2.jpg
+        link3.onclick = () => document.getElementById("kuva").src = "images/3.jpg";
+
+    </script>
+</body>
+
+</html>

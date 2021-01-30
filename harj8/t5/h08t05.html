@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
+    <script src="https://unpkg.com/babel-core@5.8.38/browser.min.js"></script>
+
+    <style>
+        body {
+            width: 400px;
+            margin: auto
+        }
+
+        .box {
+            border: 1px dashed #000;
+            padding: 15px;
+            background-color: #adbed8;
+        }
+
+        input[type="text"] {
+            width: 200px;
+        }
+
+        button {
+            background-color: #069;
+            border-radius: 5px;
+            color: #fff;
+            margin-bottom: 5px;
+            margin-right: 5px;
+            padding: 5px 15px;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h3>Nelilaskin</h3>
+    <div id="ratkaisu" class="box"></div>
+
+    <script type="text/babel">
+
+        class Nelilaskin extends React.Component {
+            
+            constructor(props) {
+                super(props);
+                this.handleClick = this.handleClick.bind(this);
+              }
+            
+            handleClick (index, event) {
+                
+                // Haetaan kaikki button-elementit
+                var myElements = document.querySelectorAll("button");
+	 
+                // Asetetaan kaikille buttoneille alkuperäinen väri:
+                for (var i = 0; i < myElements.length; i++) {
+                    myElements[i].style.backgroundColor = "#069";
+                }
+                
+                // Tähän tulee ohjelmakoodi
+                
+                // lasketaan lasku ja asetetaan vastaus
+                var merkki = index;
+                var luku1 = parseInt(this.refs.n1.value);
+                var luku2 = parseInt(this.refs.n2.value);
+                var summa = eval(luku1 + merkki + luku2);
+                this.refs.n3.value = summa;
+                
+                // vaihdetaan klikatun napin taustaväri
+                event.target.style.backgroundColor = "#085"; 
+                /* omasta mielestä tämä oli elegantimpi kuin, esim. että joka buttonilla olisi oma uniikki ref-nimi
+                liittyen merkkiin */
+            }
+
+        render() {
+            
+            return (
+              <div>
+                <table>
+                <tbody>
+                    <tr><td>Luku1:</td><td><input type="text" ref="n1" /></td></tr>
+                    <tr><td>Luku2:</td><td><input type="text" ref="n2" /></td></tr>
+                    <tr><td>Tulos:</td><td><input type="text" ref="n3" /></td></tr>
+                    <tr><td>Laske</td>
+                        <td>
+                        <button id="btn1" type="button" onClick={this.handleClick.bind(this, "+")}>+</button>
+                        <button id="btn2" type="button" onClick={this.handleClick.bind(this, "-")}>-</button>
+                        <button id="btn3" type="button" onClick={this.handleClick.bind(this, "*")}>*</button>
+                        <button id="btn4" type="button" onClick={this.handleClick.bind(this, "/")}>/</button>
+                        </td>
+                    </tr>
+                </tbody>
+                </table>
+              </div>
+            );
+          }
+        }
+
+        ReactDOM.render(
+          <Nelilaskin />,
+          document.getElementById('ratkaisu')
+        );
+
+    </script>
+
+</body></html>

@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Harjoitus 2 Tehtävä 2: #planone</title>
+</head>
+<style>
+    p,
+    div {
+        font-size: 1.5em;
+    }
+</style>
+<body>
+    <h1>Taulukon [11, 22, 33, 44] läpikäyntiä</h1>
+    <p>tulostamista ja keskeisten suureiden laskemista anonyymeillä funktioilla</p>
+    <hr>
+    <div id=results></div>
+    <script type="text/javascript">
+        // arraySum-muuttuja
+        let arraySum = function(arr) {
+            let summa = 0;
+            for (let v of arr) {
+                summa += v;
+            }
+            return summa;
+        }
+
+        // arrayAvg-muuttuja
+        let arrayAvg = function(arr) {
+            let ka = (arraySum(arr) / arr.length).toFixed(1); // keskiarvo käskettiin palauttaa yhden desimaalin tarkkuudella harjoitus 1 tehtävä 5:ssä
+            return ka;
+        }
+
+        // arrayCount-muuttuja
+        let arrayCount = function(arr) {
+            return arr.length;
+        }
+
+        // printArray-muuttuja
+        let printArray = function(arr) {
+            let tulosrivit = "";
+            for (let i = 0; i < arr.length; i++) {
+                tulosrivit += "taulukko[" + arr.indexOf(arr[i]) + "] = " + arr[i] + "<br>";
+            }
+            return tulosrivit;
+        }
+
+        // writeResults-funktio
+        function writeResults() {
+            let t = [11, 22, 33, 44];
+            let paragraph = document.getElementById("results");
+            paragraph.innerHTML += "Alkiot ovat: <br>"
+            paragraph.innerHTML += "<br>" + printArray(t) + "<br>";
+            paragraph.innerHTML += "<br>Lukumäärä on: " + arrayCount(t) + "<br>";
+            paragraph.innerHTML += "Summa on: " + arraySum(t) + "<br>";
+            paragraph.innerHTML += "Keskiarvo on: " + arrayAvg(t) + "<br>";
+
+        }
+        window.onload = writeResults();
+    </script>
+</body>
+</html>

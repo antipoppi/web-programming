@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Breakout Game with Canvas animation using requestrAnimFrame</title>
+    <script src="Ball.js"></script>
+    <script src="Paddle.js"></script>
+    <script src="Block.js"></script>
+    <script src="Breakout.js"></script>
+    <link rel="stylesheet" href="h06t02.css">
+</head>
+
+<body onload="init()">
+    <div id="container">
+        <h2>Breakout Game<span id="highscore"></span></h2>
+        <div id="canvasDiv">
+            <canvas id="myCanvas" width="400" height="800" style="border:1px solid #000000;"></canvas>
+        </div>
+
+        <div id="buttonsContainer">
+            <button onclick="start_game()" id="startButton" type="button">Start a new Game</button><br>
+            <label>Select this for harder game</label><input type="checkbox" id="diffCbox"><label><i>(ball speed x2,5)</i></label><br>
+            <button onclick="reset()" id="resetButton" type="button">Reset game</button>
+            <button onclick="resetHighscore()" id="resetHighscoreButton">Reset highscore</button><br>
+            <label><i>(reset game in case the ball goes missing)</i></label>
+        </div>
+    </div>
+
+</body></html>

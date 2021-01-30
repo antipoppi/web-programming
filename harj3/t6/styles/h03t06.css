@@ -1,0 +1,54 @@
+#c {
+    width: 400px;
+    height: 250px;
+    background-color: skyblue;
+    position: relative;
+    margin: 0 auto;
+    border: 2px;
+    border-style: dashed;
+    font-family: arial;
+}
+
+#pc {
+    background-color: lightgray;
+    font-family: arial;
+}
+
+#printDiv {
+    position: absolute;
+    bottom: 0;
+    margin: 15px 15px;
+    width: 90%;
+    height: 40%;
+    background-color: inherit;
+    border: 2px;
+    border-style: dashed
+}
+
+#printDiv > p {
+    font-family: Times new roman;
+}
+
+p {
+
+    margin-left: 20px;
+}
+
+#festivalprint {
+    position: relative;
+}
+
+input {
+    width: 55%;
+}
+
+#cc {
+    margin-top: 10px;
+    width: 165px;
+    height: 25px;
+    background-color: steelblue;
+    color: white;
+    border-radius: 0.5em;
+    border: none;
+    font-family: arial;
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tehtävä 4</title>
+    <script src="h06t04.js"></script>
+    <link rel="stylesheet" href="h06t04.css">
+</head>
+
+<body onload="drawCanvas()">
+    <div id="container">
+        <p>Säädä nestepinnan korkeus<br>
+        <span id="currentHeight"></span>cm</p>
+        <div class="slidecontainer">
+            <label>0 cm</label>
+            <input type="range" min="0" max="200" value="100" class="slider" id="myRange" oninput="updateHeight(this.value); draw(this.value)">
+            <label>200 cm</label>
+            <br><br>
+        </div>
+        <div class="canvascontainer">
+            <canvas id="myCanvas" width="800" height="400" style="border: 1px solid black;" />
+        </div>
+    </div>
+
+</body>
+</html>

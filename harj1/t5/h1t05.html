@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Harjoitus 1 Tehtävä 5: #planone</title>
+    </head>
+    <style>
+        p {
+            font-size:1.5em;
+        }
+    </style>
+    <body>
+        <h1>Taulukon [11, 22, 33, 44] läpikäyntiä</h1>
+        <p>for ja for...of-silmukoilla</p>
+        <hr>
+        <p id=tulostus></p>
+        <script>
+            let t = [11,22,33,44];
+            let lkm = 0;
+            let summa = 0;
+            let tulosrivit = ""; 
+            
+            // tulosrivin for-lause
+            for (let i=0; i<t.length; i++) {
+                tulosrivit += "taulukko[" + t.indexOf(t[i]) + "] = " + t[i] + "<br>";
+            }
+            
+            // lukumäärän for/of lause
+            for (let x of t) {
+                lkm++;
+            }
+            
+            // summan for/of lause
+            for (let x of t) {
+                summa += x;
+            }
+            
+            let ka = summa/t.length;
+            
+            document.getElementById("tulostus").innerHTML = "Alkiot ovat: <br><br>" + tulosrivit + "<br>Lukumäärä on: " + lkm + "<br>Summa on: " + summa + "<br>Keskiarvo on: " + ka.toFixed(1);
+        </script>
+    </body>
+</html>

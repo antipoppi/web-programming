@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html lang="fi">
+
+<head>
+    <title>Harjoitus 4 tehtävä 4</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script src="t3-scripts.js"></script>
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.7.0/css/all.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Ajax - Searchform</h1>
+        <div id="inputDiv">
+            <form autocomplete="off">
+                <input type="text" id="iName" name="iName" onkeydown="selectName(this, event)" onkeyup="ajaxSearch(this, event)" placeholder="Find by first name...">
+                <a id="lga"><i class="fa fa-search fa-rotate-90"></i></a>
+            </form>
+        </div>
+        <div id="resultsDiv"></div>
+
+    </div>
+</body>
+
+</html>

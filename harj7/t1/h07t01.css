@@ -1,0 +1,21 @@
+body {
+    
+}
+
+#container {
+    width: 900px;
+    height: 800px;
+    margin: 0px auto;
+    clear:left;
+}
+
+/* määritellään kartan koko ja sijainti sivulla */
+#mapid {
+    margin: 0px auto;
+    height: 600px;
+    width: 900px;
+    text-align: center;
+    
+}
+
+
